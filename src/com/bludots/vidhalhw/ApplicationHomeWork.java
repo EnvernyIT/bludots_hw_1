@@ -21,24 +21,29 @@ public class ApplicationHomeWork {
 		
 		System.out.println("\n" + list.toString());
 		int p = random.nextInt(y);
+		System.out.println("Random Searh Number: " + p);
 		SearchList(list, p);
 		
 	}
 	
 	public static void SearchList(ArrayList <Integer> list, int q) {
-			if(list.contains(q)) {
-				int index = list.indexOf(q);
-				System.out.println("Number = " + q + " & Index = " + index);
-			} else if(!list.contains(q)) {
-				System.out.println("-1");
+			boolean contains = false;
+			for(int i = 0; i < list.size(); i++) {
+				if(list.get(i) == q) {
+					contains = true;
+					System.out.println("Integer = " + q + " & Index = " + i);
+				} 
 			}
+			 if(!contains) {
+				 System.out.println(-1);
+			 }
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		input('B', 7);
-		ListOutput(8, 20);
+		ListOutput(5, 10);
 	}
 
 }
